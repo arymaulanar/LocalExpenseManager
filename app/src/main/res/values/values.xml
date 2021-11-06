@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="small_text">7sp</dimen>
     <dimen name="medium_text">14sp</dimen>
     <dimen name="large_text">24sp</dimen>
+
+    <dimen name="card_elevation">8sp</dimen>
+    <dimen name="bg_margin">4dp</dimen>
+    <dimen name="padding_content_half">4dp</dimen>
+    <dimen name="padding_content">8dp</dimen>
+    <dimen name="padding_content_square">16dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
 </resources>

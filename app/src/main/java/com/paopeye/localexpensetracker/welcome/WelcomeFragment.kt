@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_welcome.*
 
 class WelcomeFragment : Fragment() {
     companion object {
-        val TAG: String = WelcomeFragment::class.java.simpleName;
+        val TAG: String = WelcomeFragment::class.java.simpleName
         fun newInstance(): WelcomeFragment {
             val fragment = WelcomeFragment()
             val args = Bundle()
@@ -38,18 +38,18 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun init(){
-        setupView()
+        hideBottomNav()
         setupButton()
     }
 
-    private fun setupView() {
+    private fun hideBottomNav() {
         (activity as MainActivity).hideBottomNav()
     }
 
     private fun setupButton(){
         welcome_btn.setOnClickListener {
             val fragment=SignUpFragment.newInstance()
-            (activity as MainActivity).replaceFragment(fragment,SignUpFragment.TAG)
+            (activity as MainActivity).addFragmentMain(fragment,null)
         }
     }
 }

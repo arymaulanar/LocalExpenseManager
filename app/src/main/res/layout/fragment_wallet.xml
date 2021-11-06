@@ -1,68 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
-
-    <androidx.cardview.widget.CardView
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:layout_margin="@dimen/bg_margin"
+            app:cardUseCompatPadding="true"
+            android:elevation="@dimen/card_elevation"
+            card_view:cardElevation="@dimen/card_elevation">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsregular"
-                android:text="@string/total_balance"
-                android:textAlignment="center"
-                android:textSize="@dimen/medium_text"
-                app:fontFamily="@font/poppinsregular" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="4dp">
 
                 <TextView
-                    android:id="@+id/wallet_tot_currency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppinsregular"
-                    android:text="@string/rupiah"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/large_text"
-                    app:fontFamily="@font/poppinsregular" />
-
-                <TextView
-                    android:id="@+id/wallet_tot_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsregular"
                     android:text="@string/total_balance"
                     android:textAlignment="center"
-                    android:textSize="@dimen/large_text"
+                    android:textSize="@dimen/medium_text"
                     app:fontFamily="@font/poppinsregular" />
-            </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/wallet_tot_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/rupiah"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/large_text"
+                        app:fontFamily="@font/poppinsregular" />
+
+                    <TextView
+                        android:id="@+id/wallet_tot_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="@string/total_balance"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/large_text"
+                        app:fontFamily="@font/poppinsregular" />
+                </RelativeLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bg_margin"
+            android:elevation="@dimen/card_elevation"
+            app:cardUseCompatPadding="true"
+            card_view:cardElevation="@dimen/card_elevation">
+
+                <RelativeLayout
+                    android:id="@+id/wallet_relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:inputType="text"
+                        android:autofillHints="text"
+                        android:id="@+id/wallet_acc_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/padding_content"
+                        android:layout_marginTop="@dimen/fab_margin"
+                        android:layout_marginEnd="@dimen/fab_margin"
+                        android:layout_toStartOf="@+id/wallet_btnPallete"
+                        android:background="@drawable/custom_rectangle"
+                        android:hint="@string/account_name"
+                        android:padding="@dimen/padding_content" />
+
+                    <ImageButton
+                        android:id="@+id/wallet_btnPallete"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/padding_content"
+                        android:background="@drawable/custom_circle"
+                        android:src="@drawable/ic_baseline_palette_24"
+                        android:contentDescription="@string/image" />
+
+                    <EditText
+                        android:id="@+id/wallet_acc_balance"
+                        style="@style/EditTextNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/wallet_acc_name"
+                        android:background="@drawable/custom_textlines"
+                        android:hint="@string/account_balance" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/wallet_acc_balance"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageButton
+                            android:id="@+id/wallet_btnAddAccount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/padding_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/black"
+                            android:src="@drawable/ic_baseline_add_24_white"
+                            android:contentDescription="@string/image"/>
+
+                        <ImageButton
+                            android:id="@+id/wallet_btnResetAccount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/padding_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/red_cancel"
+                            android:src="@drawable/ic_baseline_remove_24"
+                            android:contentDescription="@string/image" />
+                    </LinearLayout>
+                </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wallet_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/wallet_btn_add"
+        style="@style/AddFloatingBtn"
+        app:backgroundTint="@color/black_opac75"
+        app:tint="@color/background"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:elevation="0dp"
+        app:pressedTranslationZ="0dp"
+        android:contentDescription="@string/image"/>
+</RelativeLayout>

@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">LocalExpenseTracker</string>
     <string name="name">Name</string>
+    <string name="new_name">New Name</string>
     <string name="total_balance">Total Balance</string>
     <string name="rupiah">Rp</string>
+    <string name="user_profile">User Profile</string>
+    <string name="notification">Notification</string>
+    <string name="categories">Categories</string>
+    <string name="account_name">Account Name</string>
+    <string name="account_balance">Account Balance</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="input">Input</string>
+    <string name="amount">Amount</string>
+    <string name="transaction_name">Transaction Name</string>
+    <string name="transaction_amount">Transaction Amount</string>
+    <string name="ex_amount">100,000,000.00</string>
+    <string name="select">Select</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit_msg">Click Back button again for exit</string>
+    <string name="image">Image</string>
+
+    <string-array name="income_expense_arr">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
 </resources>

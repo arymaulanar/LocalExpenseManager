@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bg_margin"
+            app:cardUseCompatPadding="true"
+            android:elevation="@dimen/card_elevation"
+            card_view:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/transaction_image_account"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_account_balance_24"
+                        android:contentDescription="@string/image"/>
+
+                    <EditText
+                        android:autofillHints="text"
+                        android:id="@+id/transaction_edittext_transactionName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_content"
+                        android:layout_toStartOf="@+id/transaction_spinner_expense"
+                        android:layout_toEndOf="@+id/transaction_image_account"
+                        android:fontFamily="@font/poppinsregular"
+                        android:hint="@string/transaction_name"
+                        android:textSize="@dimen/medium_text"
+                        app:fontFamily="@font/poppinsregular" />
+
+                    <Spinner
+                        android:id="@+id/transaction_spinner_expense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/padding_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:autofillHints="text"
+                        android:id="@+id/transaction_edittext_balance"
+                        style="@style/EditTextNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/amount"
+                        android:padding="@dimen/padding_content" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Spinner
+                        android:layout_weight="1"
+                        android:id="@+id/transaction_spinner_parent_cat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:layout_weight="1"
+                        android:id="@+id/transaction_spinner_child_cat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/transaction_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/transaction_btn_add"
+        style="@style/AddFloatingBtn"
+        app:backgroundTint="@color/black_opac75"
+        app:tint="@color/background"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:elevation="0dp"
+        app:pressedTranslationZ="0dp"
+        android:contentDescription="@string/image"/>
+</RelativeLayout>
