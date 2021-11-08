@@ -1,4 +1,4 @@
-package com.paopeye.localexpensetracker.setting
+package com.paopeye.localexpensetracker.feature.setting
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,8 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.paopeye.localexpensetracker.MainActivity
+import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
-import com.paopeye.localexpensetracker.wallet.WalletFragment
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment : Fragment() {

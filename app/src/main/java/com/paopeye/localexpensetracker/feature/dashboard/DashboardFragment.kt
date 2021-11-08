@@ -1,4 +1,4 @@
-package com.paopeye.localexpensetracker.dashboard
+package com.paopeye.localexpensetracker.feature.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.paopeye.localexpensetracker.R
-import com.paopeye.localexpensetracker.transaction.TransactionFragment
 
 class DashboardFragment: Fragment() {
 

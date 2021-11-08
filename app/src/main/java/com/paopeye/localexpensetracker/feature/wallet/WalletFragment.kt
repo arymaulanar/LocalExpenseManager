@@ -1,14 +1,13 @@
-package com.paopeye.localexpensetracker.wallet
+package com.paopeye.localexpensetracker.feature.wallet
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.paopeye.localexpensetracker.MainActivity
+import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
 import com.skydoves.colorpickerview.ColorEnvelope
-import com.skydoves.colorpickerview.listeners.ColorListener
 import kotlinx.android.synthetic.main.fragment_wallet.*
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
 import com.skydoves.colorpickerview.ColorPickerDialog
@@ -41,6 +40,8 @@ class WalletFragment :Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
+    private var btnAddState = false
+
     private fun init() {
         setupEditText()
         setupButton()
@@ -60,8 +61,26 @@ class WalletFragment :Fragment() {
                 .setBottomSpace(12) // set a bottom space between the last slidebar and buttons.
                 .show()
         }
+        wallet_btn_add.setOnClickListener(){
+            if(btnAddState){
+                processBtnAddGone()
+                btnAddState = false
+            }else{
+                processBtnAddVisible()
+                btnAddState = true
+            }
+        }
     }
 
+    private fun processBtnAddVisible(){
+        wallet_cardview_add_account.visibility = View.VISIBLE
+        wallet_btn_add.setImageResource(R.drawable.ic_baseline_remove_24)
+    }
+
+    private fun processBtnAddGone(){
+        wallet_cardview_add_account.visibility = View.GONE
+        wallet_btn_add.setImageResource(R.drawable.ic_baseline_add_24)
+    }
     private fun setLayoutColor(envelope: ColorEnvelope) {
         wallet_relativeLayout.setBackgroundColor(envelope.color)
     }

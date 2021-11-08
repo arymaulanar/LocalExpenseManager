@@ -1,4 +1,4 @@
-package com.paopeye.localexpensetracker
+package com.paopeye.localexpensetracker.feature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,12 +9,13 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.cottacush.android.currencyedittext.CurrencyInputWatcher
 import com.google.android.material.snackbar.Snackbar
-import com.paopeye.localexpensetracker.dashboard.DashboardFragment
-import com.paopeye.localexpensetracker.setting.SettingFragment
-import com.paopeye.localexpensetracker.transaction.TransactionFragment
-import com.paopeye.localexpensetracker.util.NumericKeyBoardTransformationMethod
-import com.paopeye.localexpensetracker.wallet.WalletFragment
-import com.paopeye.localexpensetracker.welcome.WelcomeFragment
+import com.paopeye.localexpensetracker.R
+import com.paopeye.localexpensetracker.feature.dashboard.DashboardFragment
+import com.paopeye.localexpensetracker.feature.setting.SettingFragment
+import com.paopeye.localexpensetracker.feature.transaction.TransactionFragment
+import com.paopeye.localexpensetracker.feature.util.NumericKeyBoardTransformationMethod
+import com.paopeye.localexpensetracker.feature.wallet.WalletFragment
+import com.paopeye.localexpensetracker.feature.welcome.WelcomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_transaction.*
 import java.util.*

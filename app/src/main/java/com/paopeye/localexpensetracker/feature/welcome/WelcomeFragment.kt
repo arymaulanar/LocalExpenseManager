@@ -1,16 +1,13 @@
-package com.paopeye.localexpensetracker.welcome
+package com.paopeye.localexpensetracker.feature.welcome
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
-import com.paopeye.localexpensetracker.MainActivity
+import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
-import com.paopeye.localexpensetracker.signup.SignUpFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.paopeye.localexpensetracker.feature.signup.SignUpFragment
 import kotlinx.android.synthetic.main.fragment_welcome.*
 
 class WelcomeFragment : Fragment() {
@@ -48,7 +45,7 @@ class WelcomeFragment : Fragment() {
 
     private fun setupButton(){
         welcome_btn.setOnClickListener {
-            val fragment=SignUpFragment.newInstance()
+            val fragment= SignUpFragment.newInstance()
             (activity as MainActivity).addFragmentMain(fragment,null)
         }
     }

@@ -1,4 +1,4 @@
-package com.paopeye.localexpensetracker.transaction
+package com.paopeye.localexpensetracker.feature.transaction
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import com.cottacush.android.currencyedittext.CurrencyInputWatcher
-import com.paopeye.localexpensetracker.MainActivity
+import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
-import com.paopeye.localexpensetracker.util.NumericKeyBoardTransformationMethod
 import kotlinx.android.synthetic.main.fragment_transaction.*
-import java.util.*
 
 class TransactionFragment :Fragment() {
 
@@ -40,6 +37,11 @@ class TransactionFragment :Fragment() {
     private fun init() {
         setupSpinner()
         setupEditText()
+        setupButton()
+    }
+
+    private fun setupButton() {
+
     }
 
     private fun setupEditText() {

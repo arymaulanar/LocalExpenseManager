@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -76,6 +77,8 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/wallet_cardview_add_account"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/bg_margin"
@@ -126,6 +129,7 @@
                         android:hint="@string/account_balance" />
 
                     <LinearLayout
+                        android:id="@+id/wallet_linearLayout_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/wallet_acc_balance"
@@ -140,8 +144,8 @@
                             android:layout_margin="@dimen/padding_content"
                             android:layout_weight="1"
                             android:backgroundTint="@android:color/black"
-                            android:src="@drawable/ic_baseline_add_24_white"
-                            android:contentDescription="@string/image"/>
+                            android:contentDescription="@string/image"
+                            android:src="@drawable/ic_baseline_check_24_white" />
 
                         <ImageButton
                             android:id="@+id/wallet_btnResetAccount"
@@ -150,8 +154,8 @@
                             android:layout_margin="@dimen/padding_content"
                             android:layout_weight="1"
                             android:backgroundTint="@color/red_cancel"
-                            android:src="@drawable/ic_baseline_remove_24"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            android:src="@drawable/ic_baseline_remove_24" />
                     </LinearLayout>
                 </RelativeLayout>
         </androidx.cardview.widget.CardView>

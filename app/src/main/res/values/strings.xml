@@ -19,7 +19,12 @@
     <string name="select">Select</string>
     <string name="cancel">Cancel</string>
     <string name="exit_msg">Click Back button again for exit</string>
+    <string name="name_empty_error">Name cannot be empty</string>
     <string name="image">Image</string>
+    <string name="month">Month</string>
+    <string name="incex">(+)</string>
+    <string name="date">Date</string>
+    <string name="ex_date">7 November 2021</string>
 
     <string-array name="income_expense_arr">
         <item>Income</item>
