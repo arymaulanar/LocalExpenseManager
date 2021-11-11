@@ -14,8 +14,9 @@
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.22135416666666666" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/drawable/selector_bottom_nav_checked.xml" value="0.3435185185185185" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/custom_dialog.xml" value="0.33" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
-        <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_setting.xml" value="0.4306010928961749" />
+        <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_setting.xml" value="0.3083067092651757" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_signup.xml" value="0.23157894736842105" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_transaction.xml" value="0.25" />
         <entry key="..\:/JOB/Android/LocalExpenseTracker/app/src/main/res/layout/fragment_wallet.xml" value="0.25" />

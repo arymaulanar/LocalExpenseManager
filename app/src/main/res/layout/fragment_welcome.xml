@@ -32,6 +32,7 @@
         android:contentDescription="@string/image" />
 
     <ImageButton
+        android:visibility="gone"
         android:id="@+id/welcome_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

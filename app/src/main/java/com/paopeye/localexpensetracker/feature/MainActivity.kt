@@ -1,15 +1,19 @@
 package com.paopeye.localexpensetracker.feature
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.cottacush.android.currencyedittext.CurrencyInputWatcher
 import com.google.android.material.snackbar.Snackbar
 import com.paopeye.localexpensetracker.R
+import com.paopeye.localexpensetracker.data.viewmodel.MainViewModel
 import com.paopeye.localexpensetracker.feature.dashboard.DashboardFragment
 import com.paopeye.localexpensetracker.feature.setting.SettingFragment
 import com.paopeye.localexpensetracker.feature.transaction.TransactionFragment
@@ -22,6 +26,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,7 +35,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (doubleBackToExitPressedOnce) {finish()}
+        if (doubleBackToExitPressedOnce) {
+            finish()
+        }
 
         this.doubleBackToExitPressedOnce = true
         Snackbar.make(layout_main, R.string.exit_msg, Snackbar.LENGTH_SHORT)
@@ -86,7 +93,7 @@ class MainActivity : AppCompatActivity() {
     //endregion
 
     //region public function
-        //region fragment
+    //region fragment
     fun addFragmentMain(fragment: Fragment, tag: String?) {
         if (tag == null) {
             justAddFragmentNull(fragment)
@@ -172,8 +179,9 @@ class MainActivity : AppCompatActivity() {
             )
             .replace(R.id.frame_main, fragment, tag).commit()
     }
-        //endregion
-        //region bottomNavVisibility
+
+    //endregion
+    //region bottomNavVisibility
     fun hideBottomNav() {
         bottomNavigationView.visibility = View.GONE
     }
@@ -181,15 +189,23 @@ class MainActivity : AppCompatActivity() {
     fun showBottomNav() {
         bottomNavigationView.visibility = View.VISIBLE
     }
-        //endregion
-        //region animate
+
+    //endregion
+    //region animate
     fun processRotate(_init: Float): Float {
         var init = _init
-            init = if (init == 0F) 180F else 0F
+        init = if (init == 0F) 180F else 0F
         return init
     }
-        //endregion
-        //region setup
+
+    //endregion
+    //region hidekeyboard
+    fun hideKeyboard(view: View){
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+    //endregion
+    //region setup
     fun setupEditTextNumber(
         editText: EditText, currency: String
     ) {
@@ -201,6 +217,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
     }
-        //endregion
     //endregion
+    //endregion
+
 }

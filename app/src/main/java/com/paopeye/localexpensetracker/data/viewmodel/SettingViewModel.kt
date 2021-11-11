@@ -10,9 +10,9 @@ import com.paopeye.localexpensetracker.data.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application):AndroidViewModel(application) {
-    private val readUserData:LiveData<List<User>>
-    private val repository:UserRepository
+class SettingViewModel(application: Application): AndroidViewModel(application) {
+    val readUserData: LiveData<List<User>>
+    private val repository: UserRepository
 
     init {
         val userDao = UserDatabase.getDatabase(application).userDao()
@@ -20,9 +20,9 @@ class UserViewModel(application: Application):AndroidViewModel(application) {
         readUserData = repository.readUserData
     }
 
-    fun addUser(user: User){
+    fun updateUser(user: User){
         viewModelScope.launch (Dispatchers.IO){
-            repository.addUser(user)
+            repository.updateUser(user)
         }
     }
 }

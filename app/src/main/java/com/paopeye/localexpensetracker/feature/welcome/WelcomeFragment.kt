@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
+import com.paopeye.localexpensetracker.data.viewmodel.MainViewModel
+import com.paopeye.localexpensetracker.data.viewmodel.WelcomeViewModel
 import com.paopeye.localexpensetracker.feature.signup.SignUpFragment
+import com.paopeye.localexpensetracker.feature.wallet.WalletFragment
 import kotlinx.android.synthetic.main.fragment_welcome.*
 
 class WelcomeFragment : Fragment() {
@@ -21,6 +25,12 @@ class WelcomeFragment : Fragment() {
         }
     }
 
+    private lateinit var mWelcomeViewModel: WelcomeViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        mWelcomeViewModel = ViewModelProvider(this)[WelcomeViewModel::class.java]
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,10 +47,31 @@ class WelcomeFragment : Fragment() {
     private fun init(){
         hideBottomNav()
         setupButton()
+        getCurrentUser()
+    }
+
+    private fun isUserExist(isExist: Boolean) {
+        if(isExist){
+            val fragment= WalletFragment.newInstance()
+            (activity as MainActivity).addFragmentMain(fragment,null)
+            showBottomNav()
+        }else{
+            welcome_btn.visibility = View.VISIBLE
+        }
+    }
+
+    private fun getCurrentUser(){
+        mWelcomeViewModel.isUserExist.observe(viewLifecycleOwner){
+            isUserExist(it)
+        }
     }
 
     private fun hideBottomNav() {
         (activity as MainActivity).hideBottomNav()
+    }
+
+    private fun showBottomNav() {
+        (activity as MainActivity).showBottomNav()
     }
 
     private fun setupButton(){

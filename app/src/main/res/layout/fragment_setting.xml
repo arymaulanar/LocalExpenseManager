@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/layout_setting"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -20,6 +22,30 @@
             android:animateLayoutChanges="true"
             android:orientation="vertical"
             android:padding="@dimen/padding_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_content"
+                android:layout_marginTop="@dimen/padding_content"
+                android:layout_marginEnd="@dimen/padding_content">
+
+                <TextView
+                    style="@style/TextViewGeneral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting"
+                    android:textSize="@dimen/large_text" />
+
+                <ImageButton
+                    android:id="@+id/setting_btnSave"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_save_24" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/setting_userProfile"
@@ -54,32 +80,21 @@
                 android:layout_marginEnd="@dimen/padding_content"
                 android:orientation="vertical"
                 android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/setting_content_userProfile_Text_UserName"
-                    style="@style/TextViewGeneral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/padding_content"
-                    android:paddingEnd="0dp"
-                    android:text="@string/name"
-                    android:textSize="@dimen/medium_text" />
-
                 <EditText
-                    android:autofillHints="name"
-                    android:inputType="textPersonName"
                     android:id="@+id/setting_content_userProfile_editText_Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/new_name" />
+                    android:autofillHints="name"
+                    android:hint="@string/new_name"
+                    android:inputType="textPersonName" />
             </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/setting_Notification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_content"
                 android:layout_marginStart="@dimen/padding_content"
+                android:layout_marginTop="@dimen/padding_content"
                 android:layout_marginEnd="@dimen/padding_content">
 
                 <TextView
@@ -119,8 +134,8 @@
                 android:id="@+id/setting_Categories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_content"
                 android:layout_marginStart="@dimen/padding_content"
+                android:layout_marginTop="@dimen/padding_content"
                 android:layout_marginEnd="@dimen/padding_content">
 
                 <TextView

@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.paopeye.localexpensetracker.feature.MainActivity
 import com.paopeye.localexpensetracker.R
 import com.paopeye.localexpensetracker.data.model.User
-import com.paopeye.localexpensetracker.data.viewmodel.UserViewModel
+import com.paopeye.localexpensetracker.data.viewmodel.MainViewModel
+import com.paopeye.localexpensetracker.data.viewmodel.SignupViewModel
 import com.paopeye.localexpensetracker.feature.wallet.WalletFragment
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_signup.*
 
 class SignUpFragment : Fragment() {
@@ -27,7 +28,7 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private lateinit var mUserViewModel: UserViewModel
+    private lateinit var mSignUpViewModel: SignupViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +43,7 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
     private fun init(){
-        mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
+        mSignUpViewModel = ViewModelProvider(this)[SignupViewModel::class.java]
         setupButton()
     }
 
@@ -60,17 +61,22 @@ class SignUpFragment : Fragment() {
     }
 
     private fun insertToDatabase():Boolean{
-        val sInput = signup_editText_name.text.toString()
         val result = true
-        if(sInput.isEmpty()){
-            Snackbar.make(layout_signup, R.string.name_empty_error, Snackbar.LENGTH_SHORT)
-                .show()
+        try {
+            val sInput = signup_editText_name.text.toString()
+            if(sInput.isEmpty()){
+                Snackbar.make(layout_signup, R.string.name_empty_error, Snackbar.LENGTH_SHORT)
+                    .show()
+                return false
+            }
+
+            val user = User(0,sInput)
+            mSignUpViewModel.addUser(user)
+            Toast.makeText(context, R.string.save_msg, Toast.LENGTH_SHORT).show()
+        }catch (ex:Exception){
+            Toast.makeText(context, ex.message.toString(), Toast.LENGTH_SHORT).show()
             return false
         }
-
-        val user = User(0,sInput)
-        mUserViewModel.addUser(user)
-
         return result
     }
 }

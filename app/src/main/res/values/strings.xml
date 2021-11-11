@@ -15,16 +15,39 @@
     <string name="amount">Amount</string>
     <string name="transaction_name">Transaction Name</string>
     <string name="transaction_amount">Transaction Amount</string>
-    <string name="ex_amount">100,000,000.00</string>
     <string name="select">Select</string>
     <string name="cancel">Cancel</string>
-    <string name="exit_msg">Click Back button again for exit</string>
-    <string name="name_empty_error">Name cannot be empty</string>
     <string name="image">Image</string>
     <string name="month">Month</string>
     <string name="incex">(+)</string>
     <string name="date">Date</string>
+    <string name="save">Save</string>
+    <string name="setting">Setting</string>
+    <string name="select_color">Select Color</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+    <string name="ex_amount">100,000,000.00</string>
     <string name="ex_date">7 November 2021</string>
+
+
+    <string name="name_empty_error">Name cannot be empty</string>
+    <string name="wallet_name_empty_error">Wallet or Account Name cannot be empty</string>
+    <string name="wallet_balance_empty_error">Wallet or Account Balance cannot be empty</string>
+
+    <string name="exit_msg">Click Back button again for exit</string>
+    <string name="save_msg">Save success</string>
+    <string name="update_msg">Update success</string>
+    <string name="delete_msg">Delete success</string>
+
+    <string name="save_cnf">Are you sure want to save?</string>
+
+
+    <string name="dialog_title_update_wallet">Update wallet</string>
+    <string name="dialog_detail_update_wallet">Are you sure want to update wallet?</string>
+    <string name="dialog_title_delete_wallet">Delete wallet</string>
+    <string name="dialog_detail_delete_wallet">Are you sure want to delete wallet? This action cannot be undone</string>
 
     <string-array name="income_expense_arr">
         <item>Income</item>

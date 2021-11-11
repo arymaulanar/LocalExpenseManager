@@ -5,11 +5,17 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.paopeye.localexpensetracker.data.dao.UserDao
+import com.paopeye.localexpensetracker.data.dao.WalletDao
 import com.paopeye.localexpensetracker.data.model.User
+import com.paopeye.localexpensetracker.data.model.Wallet
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [
+    User::class,
+    Wallet::class]
+    , version = 3, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao():UserDao
+    abstract fun walletDao():WalletDao
 
     companion object{
         @Volatile
@@ -25,7 +31,7 @@ abstract class UserDatabase : RoomDatabase() {
                     context,
                     UserDatabase::class.java,
                     "user_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }
