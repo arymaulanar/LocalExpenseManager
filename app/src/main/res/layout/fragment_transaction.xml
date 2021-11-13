@@ -38,13 +38,13 @@
                         android:contentDescription="@string/image"/>
 
                     <EditText
-                        android:autofillHints="text"
                         android:id="@+id/transaction_edittext_transactionName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/padding_content"
                         android:layout_toStartOf="@+id/transaction_spinner_expense"
                         android:layout_toEndOf="@+id/transaction_image_account"
+                        android:autofillHints="text"
                         android:fontFamily="@font/poppinsregular"
                         android:hint="@string/transaction_name"
                         android:textSize="@dimen/medium_text"
@@ -55,8 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        />
+                        android:layout_centerVertical="true" />
 
                 </RelativeLayout>
 
@@ -66,11 +65,11 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:autofillHints="text"
                         android:id="@+id/transaction_edittext_balance"
                         style="@style/EditTextNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:autofillHints="text"
                         android:hint="@string/amount"
                         android:padding="@dimen/padding_content" />
                 </RelativeLayout>

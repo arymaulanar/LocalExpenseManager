@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/layout_setting"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -36,15 +35,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/setting"
                     android:textSize="@dimen/large_text" />
-
-                <ImageButton
-                    android:id="@+id/setting_btnSave"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/ic_baseline_save_24" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -78,15 +68,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/padding_content"
                 android:layout_marginEnd="@dimen/padding_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="8">
+
                 <EditText
                     android:id="@+id/setting_content_userProfile_editText_Name"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:autofillHints="name"
                     android:hint="@string/new_name"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    style="@style/TextViewGeneral"
+                    android:layout_weight="8"/>
+                <ImageButton
+                    android:id="@+id/setting_content_userProfile_btnSave"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_baseline_check_24" />
             </LinearLayout>
 
             <RelativeLayout
@@ -162,12 +163,112 @@
                 android:layout_margin="@dimen/padding_content_half"
                 android:orientation="vertical"
                 android:padding="@dimen/padding_content"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:animateLayoutChanges="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="content" />
+                    android:layout_marginStart="@dimen/padding_content"
+                    android:layout_marginTop="@dimen/padding_content"
+                    android:layout_marginEnd="@dimen/padding_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Spinner
+                        android:id="@+id/setting_content_categories_spinner_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                    <ImageButton
+                        android:id="@+id/setting_content_categories_btn_add_parent"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_content_categories_layout_add_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_content_square"
+                    android:paddingEnd="0dp"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <EditText
+                        style="@style/TextViewGeneral"
+                        android:id="@+id/setting_content_categories_editText_name_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="@string/add_categories" />
+
+                    <ImageButton
+                        android:id="@+id/setting_content_categories_btn_save_parent"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_check_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_content_categories_layout_child"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_content"
+                    android:layout_marginTop="@dimen/padding_content"
+                    android:layout_marginEnd="@dimen/padding_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/setting_content_categories_spinner_child"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                    <ImageButton
+                        android:id="@+id/setting_content_categories_btn_add_child"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_content_categories_layout_add_child"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:paddingStart="@dimen/padding_content_square"
+                    android:paddingEnd="0dp"
+                    android:weightSum="2">
+
+                    <EditText
+                        style="@style/TextViewGeneral"
+                        android:id="@+id/setting_content_categories_editText_name_child"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="@string/add_categories" />
+
+                    <ImageButton
+                        android:id="@+id/setting_content_categories_btn_save_child"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_check_24" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

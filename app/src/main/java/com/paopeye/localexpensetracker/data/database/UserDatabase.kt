@@ -4,18 +4,22 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.paopeye.localexpensetracker.data.dao.CategoryDao
 import com.paopeye.localexpensetracker.data.dao.UserDao
 import com.paopeye.localexpensetracker.data.dao.WalletDao
-import com.paopeye.localexpensetracker.data.model.User
-import com.paopeye.localexpensetracker.data.model.Wallet
+import com.paopeye.localexpensetracker.data.model.*
+import com.paopeye.localexpensetracker.data.model.relation.CategoryWithChild
 
 @Database(entities = [
     User::class,
-    Wallet::class]
-    , version = 3, exportSchema = false)
+    Wallet::class,
+    Category::class,
+    CategoryChild::class]
+    , version = 4, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao():UserDao
     abstract fun walletDao():WalletDao
+    abstract fun categoryDao():CategoryDao
 
     companion object{
         @Volatile

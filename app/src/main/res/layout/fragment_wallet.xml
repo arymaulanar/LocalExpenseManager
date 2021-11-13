@@ -89,7 +89,6 @@
             card_view:cardElevation="@dimen/card_elevation">
 
                 <RelativeLayout
-                    android:background="@android:color/white"
                     android:id="@+id/wallet_relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,7 +107,6 @@
                         android:layout_marginTop="@dimen/fab_margin"
                         android:layout_marginEnd="@dimen/fab_margin"
                         android:layout_toStartOf="@+id/wallet_btnPallete"
-                        android:background="@drawable/custom_rectangle"
                         android:hint="@string/account_name"
                         android:padding="@dimen/padding_content" />
 
@@ -128,7 +126,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/wallet_acc_name"
-                        android:background="@drawable/custom_textlines"
                         android:hint="@string/account_balance" />
 
                     <LinearLayout
