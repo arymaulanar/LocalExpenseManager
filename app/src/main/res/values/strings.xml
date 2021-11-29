@@ -55,6 +55,8 @@
 
     <string name="please_select_one">Please Select One</string>
 
+    <string name="date_format">dd/MM/yyy HH:mm:ss</string>
+
     <string-array name="income_expense_arr">
         <item>Income</item>
         <item>Expense</item>

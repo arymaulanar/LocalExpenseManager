@@ -11,7 +11,7 @@ data class Wallet(
     @PrimaryKey(autoGenerate = true)
     val id:Int,
     val sWalletName: String,
-    val sWalletBalance: Double,
+    val fWalletBalance: Double,
     var iWalletColor: Int,
     var dCreated:Long,
     var dLastUpdated:Long

@@ -177,7 +177,7 @@ class WalletFragment : Fragment() {
             getWalletFromDatabase()
             return
         }
-        if(wallet.sWalletBalance.toString().isEmpty()){
+        if(wallet.fWalletBalance.toString().isEmpty()){
             Toast.makeText(context, R.string.wallet_balance_empty_error, Toast.LENGTH_SHORT).show()
             getWalletFromDatabase()
             return

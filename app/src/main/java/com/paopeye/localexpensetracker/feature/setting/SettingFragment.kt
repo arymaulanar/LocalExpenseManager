@@ -286,15 +286,16 @@ class SettingFragment : Fragment() {
     private fun validateAndSaveUserProfileData() {
         (activity as MainActivity).hideKeyboard(layout_setting)
         val sName = setting_content_userProfile_editText_Name.text.toString()
-        if (sName.isNotEmpty() && sNameCurrent.lowercase().trim() != sName.lowercase().trim()) {
+        if(sName.isEmpty())
+            Toast.makeText(requireContext(), R.string.name_empty_error, Toast.LENGTH_SHORT).show()
+
+        if (sNameCurrent.lowercase().trim() != sName.lowercase().trim()) {
             val snack = Snackbar.make(layout_setting, R.string.save_cnf, Snackbar.LENGTH_LONG)
             snack.setAction(R.string.save) {
                 justUpdateUserProfile(sName)
             }
             snack.anchorView = bottomNavigationView
             snack.show()
-        }else{
-            Toast.makeText(requireContext(), R.string.name_empty_error, Toast.LENGTH_SHORT).show()
         }
     }
 
